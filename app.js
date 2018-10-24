@@ -35,8 +35,6 @@ passport.deserializeUser((object, done) => {
     done(null, object)
 })
 
-app.get('/auth/github', passport.authenticate('github'))
-
 app.get('/auth/github/callback',
     passport.authenticate('github', {
         successRedirect: '/',
